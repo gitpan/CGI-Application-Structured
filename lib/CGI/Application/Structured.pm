@@ -4,7 +4,7 @@ use warnings;
 use base 'CGI::Application';
 
 use vars qw($VERSION);
-$VERSION = '0.002';
+$VERSION = '0.003';
 
 
 # Load recommended plugins by default. 
@@ -27,15 +27,15 @@ use CGI::Application::Plugin::DBIC::Schema qw/dbic_config schema resultset/;
 
 =head1 NAME
 
-CGI::Application::Structured - A medium-weight, MVC, DB web framework.
+CGI::Application::Structured - A medium-weight, MVC, DB web micro-framework.
 
 =head2 SYNOPSIS
 
-A simple, medium-weight, MVC web framework build on CGI::Application. The framework combines tested, well known plugins and helper scripts to provide a rapid development environment.
+A simple, medium-weight, MVC, DB web micro-framework built on CGI::Application. The framework combines tested, well known plugins and helper scripts to provide a rapid development environment.
 
 The bundled plugins mix the following methods into your controller runmodes:
 
-    $c->forward(runmood)
+    $c->forward(runmode)
 
     $c->redirect(url)
 
@@ -442,9 +442,9 @@ See L<Titanium> and L<CGI::Application> for lots of good ideas and examples that
 
 There are no known bugs for this distribution.  
 
-
 Please report any bugs or feature requests through the web interface at
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=<tmpl_var distro>>.
+L<https://rt.cpan.org>.
+
 I will be notified, and then you'll automatically be notified of progress on
 your bug as I make changes.
 

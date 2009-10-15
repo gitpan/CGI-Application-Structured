@@ -1,5 +1,9 @@
 Revision history for Perl module Attanium
 
+0.003 Thu Oct 15 12:43:17 EDT 2009
+   - fixed ugliness in the link to rt.cpan.org
+   - fix a couple typos in pod for tutorial
+   
 0.01 Tue Sep  8 16:41:42 2009
     - original version; created by ExtUtils::ModuleMaker 0.51
 
