@@ -1,4 +1,10 @@
 Revision history for Perl module Attanium
+0.004
+  - removed dependencie on CGI::Application::FastCGI (removed experimental feature)
+  - update documentation to reflect changes in CGI::Application::Structured::Tools v 0.008
+    - change default config file name and remove need to export ENV var.
+    - fixed bug in generation of db schema name
+    - moved db schema name to config file
 
 0.003 Thu Oct 15 12:43:17 EDT 2009
    - fixed ugliness in the link to rt.cpan.org

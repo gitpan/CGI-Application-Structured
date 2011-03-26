@@ -4,7 +4,7 @@ use warnings;
 use base 'CGI::Application';
 
 use vars qw($VERSION);
-$VERSION = '0.003';
+$VERSION = '0.004';
 
 
 # Load recommended plugins by default. 
@@ -239,12 +239,12 @@ You will need to install L<CGI::Application::Structured> which provides the runt
 CGI::Application::Structured is database centric in some sense and expects that you have a database.  Before running your
 app via server.pl you need to configure your database access.
 
-The example config is generated at MyApp1/config/config-dev.pl.  The contents are shown here.
+The example config is generated at MyApp1/config/config.pl.  The contents are shown here.
 
 	use strict;
 	my %CFG;			
 
-	$CFG{db_dsn} = "dbi:mysql:myapp1_dev";
+	$CFG{db_dsn} = "dbi:mysql:myapp_dev";
 	$CFG{db_user} = "root";
 	$CFG{db_pw} = "root";
 	$CFG{tt2_dir} = "templates";
@@ -253,6 +253,8 @@ The example config is generated at MyApp1/config/config-dev.pl.  The contents ar
 Using the root account is shown here as a worst-practice.  You should customize the file supplying the correct database dsn, user and passwords for your database.
 
 If you do not have a database and want to use an example see "Create Example Database" below before continuing.
+
+The configuration file will be found automatically when running with the built in server, but when you deploy your application you may want, or need, to update the config file location in lib/MyApp1/Dispatch.pm to point to your production config file.
 
 For information on advanced configuration see: L<CGI::Application::Plugin::ConfigAuto>
 =cut
@@ -282,17 +284,7 @@ For more information see: L<CGI::Application::Plugin::DBIC::Schema>, L<DBIx::Cla
 
 =head2 Run Your App
 
-Before running your app you will need to export the CONFIG_FILE pointing to your
-dev config file. 
-
-
-On linux you could use something like:
-
-   ~/dev/MyApp1$ export CONFIG_FILE=/home/gordon/dev/MyApp1/config/config-dev.pl
-
-On windows you could use something like:
-
-    C:\Users\gordon\dev\MyApp1: set CONFIG_FILE=C:\Users\gordon\dev\MyApp1\config\config-dev.pl
+Now that your database is configured and the schema generated you can run your app. 
 
 Run the server:
 
@@ -311,7 +303,9 @@ For more information on the nature of the development server see: L<CGI::Applica
 
 =head2 Create A New Controller
 
-This is where the create_controller.pl helper script comes in very handy.
+This is where the create_controller.pl helper script comes in very handy. create_controller.pl will
+create a new controller with a default runmode called 'index', and an index template to go with it.
+
 As an example we can generate a new module to interact with the Orders table
 of the example database.
 
@@ -434,7 +428,7 @@ See L<DBIx::Class::Manual::Intro> for more information on using the powerful ORM
 
 See L<Template::Toolkit> and L<CGI::Application::Plugin::TT> for more information on advanced templating.
 
-See L<Titanium> and L<CGI::Application> for lots of good ideas and examples that will work with your CGI::Application::Structured app.
+See L<CGI::Application> for lots of good ideas and examples that will work with your CGI::Application::Structured app.
 
 
 

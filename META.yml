@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:               CGI-Application-Structured
-version:            0.003
-abstract:           A capable, medium weight web framework.
+version:            0.004
+abstract:           A web application framework.
 author:
     - Gordon Van Amburg (vanamburg@cpan.org)
 license:            perl
@@ -31,7 +31,7 @@ no_index:
     directory:
         - t
         - inc
-generated_by:       ExtUtils::MakeMaker version 6.54
+generated_by:       ExtUtils::MakeMaker version 6.56
 meta-spec:
     url:      http://module-build.sourceforge.net/META-spec-v1.4.html
     version:  1.4

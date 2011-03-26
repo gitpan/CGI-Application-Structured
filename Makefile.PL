@@ -8,7 +8,7 @@ WriteMakefile(
 	NAME         => 'CGI::Application::Structured',
 	VERSION_FROM => 'lib/CGI/Application/Structured.pm',
 	AUTHOR       => 'Gordon Van Amburg (vanamburg@cpan.org)',
-	ABSTRACT     => 'A capable, medium weight web framework.',
+	ABSTRACT     => 'A web application framework.',
 	PREREQ_PM    => {
 		'CGI::Application'                       => 4,
 		'Test::Simple'                           => 0.44,
