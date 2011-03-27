@@ -26,6 +26,7 @@ WriteMakefile(
 		'CGI::Application::Plugin::DBIC::Schema' => 0,
 		'CGI::Application::Plugin::SuperForm'    => 0,
 	        'CGI::Application::Plugin::AutoRunmode'  => 0,
+		'CGI::Application::Plugin::DebugScreen'  => 0,
                 
 	},
         LICENSE => 'perl',

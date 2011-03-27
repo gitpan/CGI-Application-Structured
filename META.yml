@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               CGI-Application-Structured
-version:            0.005
+version:            0.006
 abstract:           A web application framework.
 author:
     - Gordon Van Amburg (vanamburg@cpan.org)
@@ -17,6 +17,7 @@ requires:
     CGI::Application::Plugin::ConfigAuto:  0
     CGI::Application::Plugin::DBH:  0
     CGI::Application::Plugin::DBIC::Schema:  0
+    CGI::Application::Plugin::DebugScreen:  0
     CGI::Application::Plugin::FillInForm:  0
     CGI::Application::Plugin::Forward:  0
     CGI::Application::Plugin::LogDispatch:  0
