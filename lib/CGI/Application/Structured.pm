@@ -4,7 +4,7 @@ use warnings;
 use base 'CGI::Application';
 
 use vars qw($VERSION);
-$VERSION = '0.004';
+$VERSION = '0.005';
 
 
 # Load recommended plugins by default. 
@@ -20,7 +20,7 @@ use CGI::Application::Plugin::TT;
 use CGI::Application::Plugin::AutoRunmode;
 use CGI::Application::Plugin::SuperForm;
 use CGI::Application::Plugin::DBIC::Schema qw/dbic_config schema resultset/;
-
+use CGI::Application::Plugin::DebugScreen;
 
 
 #################### main pod documentation begin ###################
@@ -298,6 +298,43 @@ Open your browser and test at
 
 
 For more information on the nature of the development server see: L<CGI::Application::Server>
+
+=cut
+
+=head2 Try Plugin::DebugScreen;
+
+CAS comes with L<CGI::Application::Plugin::DebugScreen>.  Plugin::DebugScreen provides a very useful stack trace with multi-line source quotations for each level of the stack.  cas-starter.pl has put debug.sh in your project root directory.  It sets up the environment for Plugin::DebugPage and runs the built in server.  
+
+Edit lib/MyApp1/C/Home.pm to generate an error to demonstrate the DebugScreen:
+
+  
+    sub index: StartRunmode {
+	my ($c) = @_;
+
+	# add this line for demo of debug screen
+	die "testing";
+
+	$c->tt_params({
+	    message => 'Hello world!',
+	    title   => 'C::Home'
+		      });
+	return $c->tt_process();
+	
+    }
+
+Run the server in debug mode:
+
+    ~/dev/MyApp1$ bash debug.sh
+    access your default runmode at /cgi-bin/index.cgi
+    CGI::Application::Server: You can connect to your server at http://localhost:8060/
+
+Open your browser and test/demo the Plugin::DebugScreen:
+
+    http://localhost:8060/cgi-bin/index.cgi
+
+Remove the line you added to Home.pm
+
+For more information on Plugin::DebugScreen see: L<CGI::Application::Plugin::DebugScreen>
 
 =cut
 
