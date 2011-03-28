@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               CGI-Application-Structured
-version:            0.006
+version:            0.007
 abstract:           A web application framework.
 author:
     - Gordon Van Amburg (vanamburg@cpan.org)

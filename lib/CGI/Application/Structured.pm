@@ -4,7 +4,7 @@ use warnings;
 use base 'CGI::Application';
 
 use vars qw($VERSION);
-$VERSION = '0.006';
+$VERSION = '0.007';
 
 
 # Load recommended plugins by default. 
